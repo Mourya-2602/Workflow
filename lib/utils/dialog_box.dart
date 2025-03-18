@@ -5,12 +5,12 @@ class DialogBox extends StatelessWidget {
   final controller;
   VoidCallback onSave;
   VoidCallback onCancel;
-  const DialogBox({super.key,required this.controller,required this.onSave,required this.onCancel});
+   DialogBox({super.key,required this.controller,required this.onSave,required this.onCancel});
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.purple[200],
+      backgroundColor: Colors.blue[200],
       content: Container(
         height:120,
         child:Column(
@@ -23,9 +23,9 @@ class DialogBox extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-            MyButton(text: "Save", onPressed:(){}),
+            MyButton(text: "Save", onPressed:onSave),
             const SizedBox(width: 8,),
-            MyButton(text: "Cancel", onPressed:(){})
+            MyButton(text: "Cancel", onPressed:onCancel)
           ],)
         ])
       ),
